@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toQueryString } from "./common.utils";
-import { setAccessToken } from "../auth/auth.slice";
-import { setIsExpired } from "../auth/login/login.slice";
+import { setAccessToken } from "@/auth/auth.slice";
+import { setIsExpired } from "@/auth/login/login.slice";
 // config
 import { HOST_API } from "../../config";
 import { PATH_AUTH } from "../routes/path";

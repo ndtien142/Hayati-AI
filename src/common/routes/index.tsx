@@ -1,4 +1,4 @@
-import { ElementType, Suspense } from "react";
+import { ElementType, lazy, Suspense } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 import GuestGuard from "../components/guards/GuestGuard";
 // import { useLocation } from "react-router-dom";
@@ -25,7 +25,7 @@ export default function Router() {
           path: "login",
           element: (
             <GuestGuard>
-              <span>Login</span>,
+              <Login />
             </GuestGuard>
           ),
         },
@@ -54,3 +54,5 @@ export default function Router() {
     { path: "*", element: <Navigate to="/404" replace /> },
   ]);
 }
+
+const Login = Loadable(lazy(() => import("../../auth/login")));

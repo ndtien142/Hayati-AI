@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import storage from "redux-persist/lib/storage";
 
-import authLoginReducer from "../auth/auth.slice";
-import loginReducer from "../auth/login/login.slice";
+import authLoginReducer from "@/auth/auth.slice";
+import loginReducer from "@/auth/login/login.slice";
 
 // ----------------------------------------------------------------------
 const rootPersistConfig = {
