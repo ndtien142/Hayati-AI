@@ -7,7 +7,7 @@ const ROOT_AUTH = "/auth";
 export const PATH_AUTH = {
   root: ROOT_AUTH,
   login: path(ROOT_AUTH, "/login"),
-  register: path(ROOT_AUTH, "/register"),
+  singup: path(ROOT_AUTH, "/signup"),
   verify: path(ROOT_AUTH, "/verify"),
   resetPassword: path(ROOT_AUTH, "/reset-password"),
   forgotPassword: path(ROOT_AUTH, "/forgot-password"),

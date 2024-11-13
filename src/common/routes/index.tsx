@@ -29,6 +29,14 @@ export default function Router() {
             </GuestGuard>
           ),
         },
+        {
+          path: "signup",
+          element: (
+            <GuestGuard>
+              <Signup />
+            </GuestGuard>
+          ),
+        },
       ],
     },
     // Main Routes
@@ -55,4 +63,6 @@ export default function Router() {
   ]);
 }
 
+// Authentication
 const Login = Loadable(lazy(() => import("../../auth/login")));
+const Signup = Loadable(lazy(() => import("../../auth/signup")));
