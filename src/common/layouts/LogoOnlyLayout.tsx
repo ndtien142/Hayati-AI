@@ -1,14 +1,11 @@
 import { Outlet } from "react-router-dom";
-// components
-// ----------------------------------------------------------------------
-
-// ----------------------------------------------------------------------
 
 export default function LogoOnlyLayout() {
   return (
     <>
-      <span>logo</span>
-      <Outlet />
+      <div className="w-[100vw] h-[100vh] no-scrollbar overflow-scroll">
+        <Outlet />
+      </div>
     </>
   );
 }

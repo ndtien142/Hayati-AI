@@ -20,6 +20,7 @@ export default function Router() {
     // Auth Routes
     {
       path: "auth",
+      element: <AuthLayout />,
       children: [
         {
           path: "login",
@@ -52,16 +53,23 @@ export default function Router() {
     },
     {
       path: "/",
+      element: <LogoOnlyLayout />,
       children: [
         {
           path: "",
-          element: <span>hihi</span>,
+          element: <></>,
         },
       ],
     },
     { path: "*", element: <Navigate to="/404" replace /> },
   ]);
 }
+
+// Layout
+const LogoOnlyLayout = Loadable(
+  lazy(() => import("../layouts/LogoOnlyLayout"))
+);
+const AuthLayout = Loadable(lazy(() => import("../layouts/LayoutAuth")));
 
 // Authentication
 const Login = Loadable(lazy(() => import("../../auth/login")));
