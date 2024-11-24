@@ -1,5 +1,5 @@
+import { RootState } from "@/common/redux/store";
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../../redux/store";
 
 type StateProps = {
   username: string;

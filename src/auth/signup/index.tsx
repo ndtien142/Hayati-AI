@@ -34,7 +34,7 @@ const SignupContainer = () => {
               <img
                 className="w-full h-full object-cover"
                 alt=""
-                src="/images/signup/signup-1.png"
+                src="/Hayati-AI/images/signup/signup-1.png"
               />
             </div>
           </SwiperSlide>
@@ -43,7 +43,7 @@ const SignupContainer = () => {
               <img
                 className="w-full h-full object-cover"
                 alt=""
-                src="/images/signup/signup-2.png"
+                src="/Hayati-AI/images/signup/signup-2.png"
               />
             </div>
           </SwiperSlide>
@@ -52,7 +52,7 @@ const SignupContainer = () => {
               <img
                 className="w-full h-full object-cover"
                 alt=""
-                src="/images/signup/signup-3.png"
+                src="/Hayati-AI/images/signup/signup-3.png"
               />
             </div>
           </SwiperSlide>
@@ -61,7 +61,7 @@ const SignupContainer = () => {
               <img
                 className="w-full h-full object-cover"
                 alt=""
-                src="/images/signup/signup-4.png"
+                src="/Hayati-AI/images/signup/signup-4.png"
               />
             </div>
           </SwiperSlide>
@@ -70,7 +70,7 @@ const SignupContainer = () => {
               <img
                 className="w-full h-full object-cover"
                 alt=""
-                src="/images/signup/signup-5.png"
+                src="/Hayati-AI/images/signup/signup-5.png"
               />
             </div>
           </SwiperSlide>

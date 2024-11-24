@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <HelmetProvider>
         <ReduxProvider store={store}>
           <PersistGate loading={null} persistor={persistor}>
-            <BrowserRouter>
+            <BrowserRouter basename="/Hayati-AI/">
               <App />
             </BrowserRouter>
           </PersistGate>

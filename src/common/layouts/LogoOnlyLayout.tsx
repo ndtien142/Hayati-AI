@@ -1,14 +1,20 @@
-import { Outlet } from "react-router-dom";
-// components
-// ----------------------------------------------------------------------
-
-// ----------------------------------------------------------------------
+import { useEffect } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 
 export default function LogoOnlyLayout() {
+  const isLogin = false;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isLogin) {
+      navigate("/auth/login", { replace: true });
+    }
+  }, []);
   return (
     <>
-      <span>logo</span>
-      <Outlet />
+      <div className="w-[100vw] h-[100vh] no-scrollbar overflow-scroll">
+        <Outlet />
+      </div>
     </>
   );
 }
