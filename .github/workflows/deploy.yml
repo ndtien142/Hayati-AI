@@ -30,10 +30,10 @@ jobs:
           path: ./dist
 
   deploy:
-    name: Deploy
+    name: Deploy development
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/dev'
 
     steps:
       - name: Download artifact
