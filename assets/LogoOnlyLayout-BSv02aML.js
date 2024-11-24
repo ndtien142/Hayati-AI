@@ -1,1 +1,0 @@
-import{j as o,O as r}from"./index-q8xnhje6.js";function l(){return o.jsx(o.Fragment,{children:o.jsx("div",{className:"w-[100vw] h-[100vh] no-scrollbar overflow-scroll",children:o.jsx(r,{})})})}export{l as default};
