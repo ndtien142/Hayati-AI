@@ -26,8 +26,8 @@ axiosInstance.interceptors.response.use(
         .post<unknown, { accessToken: string }>("/account/refresh-token", {
           refreshToken: refreshToken,
         })
-        .then((res: unknown) => {
-          store.dispatch(setAccessToken("Bearer " + res?.data?.accessToken));
+        .then((res: any) => {
+          store.dispatch(setAccessToken("Bearer " + res?.accessToken));
         })
         .catch(() => {
           store.dispatch(setIsExpired(true));
