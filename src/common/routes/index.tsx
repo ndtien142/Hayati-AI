@@ -1,6 +1,7 @@
 import { ElementType, lazy, Suspense } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 import GuestGuard from "../components/guards/GuestGuard";
+import { PATH_AUTH, PATH_MAIN } from "./path";
 // import { useLocation } from "react-router-dom";
 
 const Loadable = (Component: ElementType) => (props: any) => {
@@ -19,11 +20,11 @@ export default function Router() {
   return useRoutes([
     // Auth Routes
     {
-      path: "auth",
+      path: PATH_AUTH.root,
       element: <AuthLayout />,
       children: [
         {
-          path: "login",
+          path: PATH_AUTH.login,
           element: (
             <GuestGuard>
               <Login />
@@ -31,7 +32,7 @@ export default function Router() {
           ),
         },
         {
-          path: "signup",
+          path: PATH_AUTH.singup,
           element: (
             <GuestGuard>
               <Signup />
@@ -52,12 +53,16 @@ export default function Router() {
       ],
     },
     {
-      path: "/",
+      path: PATH_MAIN.root,
       element: <LogoOnlyLayout />,
       children: [
         {
           path: "",
-          element: <></>,
+          element: <Onboarding />,
+        },
+        {
+          path: PATH_MAIN.onboarding.root,
+          element: <>onboarding</>,
         },
       ],
     },
@@ -74,3 +79,6 @@ const AuthLayout = Loadable(lazy(() => import("../layouts/LayoutAuth")));
 // Authentication
 const Login = Loadable(lazy(() => import("../../auth/login")));
 const Signup = Loadable(lazy(() => import("../../auth/signup")));
+
+// OnBoarding
+const Onboarding = Loadable(lazy(() => import("../../onboarding")));
