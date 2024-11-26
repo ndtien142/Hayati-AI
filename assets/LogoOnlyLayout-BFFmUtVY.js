@@ -1,1 +1,0 @@
-import{u as a,r,j as e,O as s}from"./index-CwXXaYY6.js";function l(){const t=a();return r.useEffect(()=>{t("/auth/login",{replace:!0})},[]),e.jsx(e.Fragment,{children:e.jsx("div",{className:"w-[100vw] h-[100vh] no-scrollbar overflow-scroll",children:e.jsx(s,{})})})}export{l as default};
