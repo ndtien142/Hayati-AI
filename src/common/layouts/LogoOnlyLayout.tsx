@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 
 export default function LogoOnlyLayout() {
-  const isLogin = false;
+  const isLogin = true;
   const navigate = useNavigate();
 
   useEffect(() => {
