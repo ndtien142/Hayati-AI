@@ -64,3 +64,12 @@ export function isValidURL(url: string) {
   ); // fragment locator
   return !!pattern.test(url);
 }
+
+// Replace Path Params
+export function replacePathParams(path: string, newData: any) {
+  let newPath = path;
+  Object.keys(newData).forEach((it) => {
+    newPath = newPath.replace(`:${it}`, newData[it]);
+  });
+  return newPath;
+}
