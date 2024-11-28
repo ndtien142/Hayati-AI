@@ -23,5 +23,6 @@ export const PATH_MAIN = {
   root: "/",
   onboarding: {
     root: "/onboarding",
+    swipe: "/onboarding/swipe",
   },
 };
