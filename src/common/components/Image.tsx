@@ -1,4 +1,5 @@
 import {
+  Effect,
   LazyLoadImage,
   LazyLoadImageProps,
 } from "react-lazy-load-image-component";
@@ -16,11 +17,11 @@ export type ImageRatio =
 
 type IProps = React.HTMLAttributes<HTMLSpanElement> & LazyLoadImageProps;
 
-interface Props extends IProps {
+interface Props extends Omit<IProps, "effect"> {
   ratio?: ImageRatio;
   src: string;
   disabledEffect?: boolean;
-  effect?: string;
+  effect?: Effect;
 }
 
 export default function Image({

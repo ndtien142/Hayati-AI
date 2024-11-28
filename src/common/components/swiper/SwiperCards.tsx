@@ -1,12 +1,12 @@
 import { cardData as initialCardData } from "@/_mock/onboarding.mock";
-import React, { useState, useRef, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import TinderCard from "react-tinder-card";
 import { Badge } from "@/components/ui/badge";
 import ProgressBar from "./ProgressBar";
 
 const SwiperCards = () => {
   const [cardData, setCardData] = useState(initialCardData);
-  const [lastDirection, setLastDirection] = useState<string | null>(null);
+  // const [lastDirection, setLastDirection] = useState<string | null>(null);
 
   const childRefs = useMemo(
     () =>
@@ -16,9 +16,9 @@ const SwiperCards = () => {
     [cardData]
   );
 
-  const swiped = (direction: string, nameToDelete: string, index: number) => {
+  const swiped = (index: number) => {
     const reversedIndex = cardData.length - 1 - index; // Đổi index
-    setLastDirection(direction);
+    // setLastDirection(direction);
     setCardData((prev) => prev.filter((_, i) => i !== reversedIndex));
   };
 
@@ -26,23 +26,27 @@ const SwiperCards = () => {
     console.log(`Card (${id}) at index ${idx} left the screen!`);
   };
 
-  const swipe = async (dir: string) => {
-    if (cardData.length > 0) {
-      const currentIndex = cardData.length - 1;
-      await childRefs[currentIndex].current.swipe(dir);
-    }
-  };
+  // const swipe = async (dir: string) => {
+  //   if (cardData.length > 0) {
+  //     const currentIndex = cardData.length - 1;
+  //     await childRefs[currentIndex].current.swipe(dir);
+  //   }
+  // };
 
   return (
     <div className="w-full h-full flex items-center justify-center">
       <div className="relative w-[93vw] h-[75vh]">
         {[...cardData].reverse().map((card, index) => (
           <TinderCard
+            // @ts-ignore
             ref={childRefs[index]}
             className="absolute top-0 left-0"
             key={index}
             preventSwipe={["up", "down"]}
-            onSwipe={(dir) => swiped(dir, card.name, index)}
+            onSwipe={(dir) => {
+              console.log("dir: ", dir);
+              return swiped(index);
+            }}
             onCardLeftScreen={() => outOfFrame(card.id, index)}
           >
             <div
