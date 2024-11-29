@@ -19,7 +19,7 @@ const SignupContainer = () => {
     navigate(PATH_AUTH.login);
   };
   return (
-    <main className="px-4 pt-12 w-full overflow-hidden">
+    <main className="px-4 pt-12 w-full overflow-y-scroll h-[100vh] no-scrollbar">
       <div className="flex items-center gap-2 mb-4 w-[325px] overflow-hidden relative">
         <Swiper
           spaceBetween={8}

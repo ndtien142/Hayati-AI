@@ -61,8 +61,8 @@ export default function Router() {
           element: <Onboarding />,
         },
         {
-          path: PATH_MAIN.onboarding.root,
-          element: <>onboarding</>,
+          path: PATH_MAIN.onboarding.swipe,
+          element: <OnboardingSwipe />,
         },
       ],
     },
@@ -82,3 +82,6 @@ const Signup = Loadable(lazy(() => import("../../auth/signup")));
 
 // OnBoarding
 const Onboarding = Loadable(lazy(() => import("../../onboarding")));
+const OnboardingSwipe = Loadable(
+  lazy(() => import("../../onboarding/swipe/OnboardingSwipe"))
+);
