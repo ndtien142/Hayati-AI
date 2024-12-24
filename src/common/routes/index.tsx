@@ -4,17 +4,18 @@ import GuestGuard from "../components/guards/GuestGuard";
 import { PATH_AUTH, PATH_MAIN } from "./path";
 // import { useLocation } from "react-router-dom";
 
-const Loadable = (Component: ElementType) => (props: any) => {
-  // const { pathname } = useLocation();
+const Loadable =
+  (Component: ElementType) => (props: JSX.IntrinsicAttributes) => {
+    // const { pathname } = useLocation();
 
-  // const isDashboard = pathname.includes('/dashboard');
+    // const isDashboard = pathname.includes('/dashboard');
 
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Component {...props} />
-    </Suspense>
-  );
-};
+    return (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Component {...props} />
+      </Suspense>
+    );
+  };
 
 export default function Router() {
   return useRoutes([
@@ -64,6 +65,18 @@ export default function Router() {
           path: PATH_MAIN.onboarding.swipe,
           element: <OnboardingSwipe />,
         },
+        {
+          path: PATH_MAIN.onboarding.match,
+          element: <OnboardingMatch />,
+        },
+        {
+          path: PATH_MAIN.onboarding.chatting,
+          element: <ChattingContainer />,
+        },
+        {
+          path: PATH_MAIN.onboarding.subscribe,
+          element: <SubscribeContainer />,
+        },
       ],
     },
     { path: "*", element: <Navigate to="/404" replace /> },
@@ -84,4 +97,13 @@ const Signup = Loadable(lazy(() => import("../../auth/signup")));
 const Onboarding = Loadable(lazy(() => import("../../onboarding")));
 const OnboardingSwipe = Loadable(
   lazy(() => import("../../onboarding/swipe/OnboardingSwipe"))
+);
+const OnboardingMatch = Loadable(
+  lazy(() => import("../../onboarding/swipe/MatchOnSwipe"))
+);
+const ChattingContainer = Loadable(
+  lazy(() => import("../../onboarding/chatting"))
+);
+const SubscribeContainer = Loadable(
+  lazy(() => import("../../onboarding/subscribe"))
 );

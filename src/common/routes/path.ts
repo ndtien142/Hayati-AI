@@ -24,5 +24,8 @@ export const PATH_MAIN = {
   onboarding: {
     root: "/onboarding",
     swipe: "/onboarding/swipe",
+    match: "/onboarding/match",
+    chatting: "/onboarding/chatting",
+    subscribe: "/onboarding/subscribe",
   },
 };
