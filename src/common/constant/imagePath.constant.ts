@@ -13,4 +13,14 @@ export const IMAGE_PATH = {
     image_4: "/Hayati-AI/images/swipe/swipe-4.png",
     image_5: "/Hayati-AI/images/swipe/swipe-5.png",
   },
+  onboarding: {
+    image_1: "/Hayati-AI/images/onboarding/onboarding-1.png",
+    image_2: "/Hayati-AI/images/onboarding/onboarding-2.png",
+    image_3: "/Hayati-AI/images/onboarding/onboarding-3.png",
+    image_4: "/Hayati-AI/images/onboarding/onboarding-chatting.png",
+    image_5: "/Hayati-AI/images/onboarding/onboarding-4.png",
+  },
+  subscribe: {
+    image_1: "/Hayati-AI/images/subscribe/subscribe-1.png",
+  },
 };

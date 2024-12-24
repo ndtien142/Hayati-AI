@@ -11,10 +11,8 @@ export default function LogoOnlyLayout() {
     }
   }, []);
   return (
-    <>
-      <div className="w-[100vw] h-[100vh] no-scrollbar overflow-scroll">
-        <Outlet />
-      </div>
-    </>
+    <div className="no-scrollbar overflow-scroll">
+      <Outlet />
+    </div>
   );
 }
