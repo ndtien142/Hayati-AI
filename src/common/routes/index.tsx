@@ -138,4 +138,4 @@ const SubscribeContainer = Loadable(
 const DiscoverContainer = Loadable(lazy(() => import("../../discover")));
 
 // Chatting
-const ChattingContainer = Loadable(lazy(() => import("../../chatting")));
+const ChattingContainer = Loadable(lazy(() => import("../../chatting/room")));
