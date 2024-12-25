@@ -66,3 +66,30 @@ export const MESSAGE_ROOM: MessageListResponse = {
     totalCount: 4,
   },
 };
+
+export const IMAGE_WALLPAPER_MOCK = {
+  data: [
+    {
+      id: 1,
+      url: IMAGE_PATH.wallpaper.Image4,
+    },
+    {
+      id: 2,
+      url: IMAGE_PATH.wallpaper.image3,
+    },
+    {
+      id: 3,
+      url: IMAGE_PATH.wallpaper.image1,
+    },
+    {
+      id: 4,
+      url: IMAGE_PATH.wallpaper.Image4,
+    },
+  ],
+  meta: {
+    currentPage: 1,
+    totalPages: 1,
+    itemPerPages: 4,
+    totalCount: 4,
+  },
+};

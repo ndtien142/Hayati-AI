@@ -36,6 +36,6 @@ export const PATH_MAIN = {
     room: "/chatting/room",
     detailRoom: "/chatting/room/:roomId",
     wallpaper: "/chatting/wallpaper",
-    wallpaperPreview: "/chatting/wallpaper/preview",
+    wallpaperPreview: "/chatting/wallpaper-preview",
   },
 };

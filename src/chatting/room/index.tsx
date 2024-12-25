@@ -5,7 +5,7 @@ import { MESSAGE_ROOM } from "@/_mock/chatting.mock";
 const ChattingContainer = () => {
   return (
     <main className="w-[100vw] h-[100vh] relative">
-      <div className="px-4 mt-14 text-start w-full">
+      <div className="px-4 mt-12 text-start w-full">
         <h3
           className="text-2xl text-[#ECECEC] font-editorial_regular"
           style={{

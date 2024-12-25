@@ -98,8 +98,20 @@ export default function Router() {
               element: <ChattingContainer />,
             },
             {
-              path: PATH_MAIN.chatting.detailRoom,
+              path: PATH_MAIN.chatting.room,
               element: <ChattingContainer />,
+            },
+            {
+              path: PATH_MAIN.chatting.detailRoom,
+              element: <ChattingDetailRoom />,
+            },
+            {
+              path: PATH_MAIN.chatting.wallpaper,
+              element: <ChattingWallpaperContainer />,
+            },
+            {
+              path: PATH_MAIN.chatting.wallpaperPreview,
+              element: <ChattingWallpaperPreviewContainer />,
             },
           ],
         },
@@ -139,3 +151,12 @@ const DiscoverContainer = Loadable(lazy(() => import("../../discover")));
 
 // Chatting
 const ChattingContainer = Loadable(lazy(() => import("../../chatting/room")));
+const ChattingDetailRoom = Loadable(
+  lazy(() => import("../../chatting/detail-room"))
+);
+const ChattingWallpaperContainer = Loadable(
+  lazy(() => import("../../chatting/wallpaper"))
+);
+const ChattingWallpaperPreviewContainer = Loadable(
+  lazy(() => import("../../chatting/wallpaper-preview"))
+);

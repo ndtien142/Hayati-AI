@@ -23,4 +23,14 @@ export const IMAGE_PATH = {
   subscribe: {
     image_1: "/Hayati-AI/images/subscribe/subscribe-1.png",
   },
+  wallpaper: {
+    image1: "/Hayati-AI/images/swipe/swipe-1.png",
+    image2: "/Hayati-AI/images/wallpaper/image.png",
+    image3: "/Hayati-AI/images/wallpaper/image1.png",
+    Image4: "/Hayati-AI/images/wallpaper/image2.png",
+  },
+  avatars: {
+    layla: "/Hayati-AI/images/onboarding/onboarding-1.png",
+    you: "/Hayati-AI/images/onboarding/onboarding-2.png",
+  },
 };
