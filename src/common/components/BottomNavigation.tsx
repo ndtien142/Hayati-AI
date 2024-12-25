@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 import {
   PiChatTeardropFill,
   PiGenderFemaleFill,
@@ -6,14 +6,16 @@ import {
 } from "react-icons/pi";
 import { Link } from "react-router-dom";
 
-const BottomNavigation = () => {
-  const [activeTab, setActiveTab] = useState("Discover");
+interface BottomNavigationProps {
+  activeTab: string;
+}
 
+const BottomNavigation: React.FC<BottomNavigationProps> = ({ activeTab }) => {
   const navItems = [
     {
       label: "Discover",
-      icon: <PiGenderFemaleFill size={25} color="#FF9BE3" />,
-      color: "#FF9BE3",
+      icon: <PiGenderFemaleFill size={25} />,
+      color: "#FFF",
       route: "/discover",
     },
     {
@@ -37,15 +39,15 @@ const BottomNavigation = () => {
           key={index}
           to={item.route}
           className={`flex flex-col items-center gap-1 text-white hover:text-slate-300 dark:text-gray-400 dark:hover:text-gray-50 ${
-            activeTab === item.label ? "text-pink-400" : "text-white"
+            activeTab === item.label ? "text-[#FF9BE3]" : "text-white"
           }`}
-          onClick={() => setActiveTab(item.label)} // Set active tab on click
         >
-          {item.icon}
+          {React.cloneElement(item.icon, {
+            color: activeTab === item.label ? "#FF9BE3" : item.color,
+          })}
           <span
-            className={`text-[16px] font-[800] ${
-              activeTab === item.label ? "text-pink-400" : "text-white"
-            }`}
+            className={`text-[16px] font-[800]`}
+            style={{ color: activeTab === item.label ? "#FF9BE3" : item.color }}
           >
             {item.label}
           </span>

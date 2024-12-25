@@ -15,7 +15,7 @@ const DiscoverContainer = () => {
         </span>
         <SwiperCards />
       </div>
-      <BottomNavigation />
+      <BottomNavigation activeTab="Discover" />
     </main>
   );
 };
