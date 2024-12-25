@@ -24,5 +24,18 @@ export const PATH_MAIN = {
   onboarding: {
     root: "/onboarding",
     swipe: "/onboarding/swipe",
+    match: "/onboarding/match",
+    chatting: "/onboarding/chatting",
+    subscribe: "/onboarding/subscribe",
+  },
+  discover: {
+    root: "/discover",
+  },
+  chatting: {
+    root: "/chatting",
+    room: "/chatting/room",
+    detailRoom: "/chatting/room/:roomId",
+    wallpaper: "/chatting/wallpaper",
+    wallpaperPreview: "/chatting/wallpaper-preview",
   },
 };

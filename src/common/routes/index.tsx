@@ -4,17 +4,18 @@ import GuestGuard from "../components/guards/GuestGuard";
 import { PATH_AUTH, PATH_MAIN } from "./path";
 // import { useLocation } from "react-router-dom";
 
-const Loadable = (Component: ElementType) => (props: any) => {
-  // const { pathname } = useLocation();
+const Loadable =
+  (Component: ElementType) => (props: JSX.IntrinsicAttributes) => {
+    // const { pathname } = useLocation();
 
-  // const isDashboard = pathname.includes('/dashboard');
+    // const isDashboard = pathname.includes('/dashboard');
 
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Component {...props} />
-    </Suspense>
-  );
-};
+    return (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Component {...props} />
+      </Suspense>
+    );
+  };
 
 export default function Router() {
   return useRoutes([
@@ -57,12 +58,62 @@ export default function Router() {
       element: <LogoOnlyLayout />,
       children: [
         {
-          path: "",
-          element: <Onboarding />,
+          path: "/",
+          element: <Navigate to={PATH_MAIN.discover.root} replace />,
         },
         {
-          path: PATH_MAIN.onboarding.swipe,
-          element: <OnboardingSwipe />,
+          path: PATH_MAIN.discover.root,
+          element: <DiscoverContainer />,
+        },
+        {
+          path: PATH_MAIN.onboarding.root,
+          children: [
+            {
+              path: PATH_MAIN.onboarding.root,
+              element: <Onboarding />,
+            },
+            {
+              path: PATH_MAIN.onboarding.swipe,
+              element: <OnboardingSwipe />,
+            },
+            {
+              path: PATH_MAIN.onboarding.match,
+              element: <OnboardingMatch />,
+            },
+            {
+              path: PATH_MAIN.onboarding.chatting,
+              element: <OnboardingChatting />,
+            },
+            {
+              path: PATH_MAIN.onboarding.subscribe,
+              element: <SubscribeContainer />,
+            },
+          ],
+        },
+        {
+          path: PATH_MAIN.chatting.root,
+          children: [
+            {
+              path: PATH_MAIN.chatting.root,
+              element: <ChattingContainer />,
+            },
+            {
+              path: PATH_MAIN.chatting.room,
+              element: <ChattingContainer />,
+            },
+            {
+              path: PATH_MAIN.chatting.detailRoom,
+              element: <ChattingDetailRoom />,
+            },
+            {
+              path: PATH_MAIN.chatting.wallpaper,
+              element: <ChattingWallpaperContainer />,
+            },
+            {
+              path: PATH_MAIN.chatting.wallpaperPreview,
+              element: <ChattingWallpaperPreviewContainer />,
+            },
+          ],
         },
       ],
     },
@@ -84,4 +135,28 @@ const Signup = Loadable(lazy(() => import("../../auth/signup")));
 const Onboarding = Loadable(lazy(() => import("../../onboarding")));
 const OnboardingSwipe = Loadable(
   lazy(() => import("../../onboarding/swipe/OnboardingSwipe"))
+);
+const OnboardingMatch = Loadable(
+  lazy(() => import("../../onboarding/swipe/MatchOnSwipe"))
+);
+const OnboardingChatting = Loadable(
+  lazy(() => import("../../onboarding/chatting"))
+);
+const SubscribeContainer = Loadable(
+  lazy(() => import("../../onboarding/subscribe"))
+);
+
+// Discover
+const DiscoverContainer = Loadable(lazy(() => import("../../discover")));
+
+// Chatting
+const ChattingContainer = Loadable(lazy(() => import("../../chatting/room")));
+const ChattingDetailRoom = Loadable(
+  lazy(() => import("../../chatting/detail-room"))
+);
+const ChattingWallpaperContainer = Loadable(
+  lazy(() => import("../../chatting/wallpaper"))
+);
+const ChattingWallpaperPreviewContainer = Loadable(
+  lazy(() => import("../../chatting/wallpaper-preview"))
 );

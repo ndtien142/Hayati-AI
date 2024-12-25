@@ -66,7 +66,10 @@ export function isValidURL(url: string) {
 }
 
 // Replace Path Params
-export function replacePathParams(path: string, newData: any) {
+export function replacePathParams(
+  path: string,
+  newData: { [key: string]: string }
+) {
   let newPath = path;
   Object.keys(newData).forEach((it) => {
     newPath = newPath.replace(`:${it}`, newData[it]);
