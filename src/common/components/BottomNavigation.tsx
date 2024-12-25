@@ -22,7 +22,7 @@ const BottomNavigation: React.FC<BottomNavigationProps> = ({ activeTab }) => {
       label: "Chat",
       icon: <PiChatTeardropFill size={25} />,
       color: "#FFF",
-      route: "/chat",
+      route: "/chatting",
     },
     {
       label: "Profile",

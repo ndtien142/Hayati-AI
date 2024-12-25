@@ -31,4 +31,11 @@ export const PATH_MAIN = {
   discover: {
     root: "/discover",
   },
+  chatting: {
+    root: "/chatting",
+    room: "/chatting/room",
+    detailRoom: "/chatting/room/:roomId",
+    wallpaper: "/chatting/wallpaper",
+    wallpaperPreview: "/chatting/wallpaper/preview",
+  },
 };

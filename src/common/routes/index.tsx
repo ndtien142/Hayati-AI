@@ -67,8 +67,11 @@ export default function Router() {
         },
         {
           path: PATH_MAIN.onboarding.root,
-          element: <Onboarding />,
           children: [
+            {
+              path: PATH_MAIN.onboarding.root,
+              element: <Onboarding />,
+            },
             {
               path: PATH_MAIN.onboarding.swipe,
               element: <OnboardingSwipe />,
@@ -79,11 +82,24 @@ export default function Router() {
             },
             {
               path: PATH_MAIN.onboarding.chatting,
-              element: <ChattingContainer />,
+              element: <OnboardingChatting />,
             },
             {
               path: PATH_MAIN.onboarding.subscribe,
               element: <SubscribeContainer />,
+            },
+          ],
+        },
+        {
+          path: PATH_MAIN.chatting.root,
+          children: [
+            {
+              path: PATH_MAIN.chatting.root,
+              element: <ChattingContainer />,
+            },
+            {
+              path: PATH_MAIN.chatting.detailRoom,
+              element: <ChattingContainer />,
             },
           ],
         },
@@ -111,12 +127,15 @@ const OnboardingSwipe = Loadable(
 const OnboardingMatch = Loadable(
   lazy(() => import("../../onboarding/swipe/MatchOnSwipe"))
 );
-const ChattingContainer = Loadable(
+const OnboardingChatting = Loadable(
   lazy(() => import("../../onboarding/chatting"))
 );
 const SubscribeContainer = Loadable(
   lazy(() => import("../../onboarding/subscribe"))
 );
 
-// Main
+// Discover
 const DiscoverContainer = Loadable(lazy(() => import("../../discover")));
+
+// Chatting
+const ChattingContainer = Loadable(lazy(() => import("../../chatting")));
