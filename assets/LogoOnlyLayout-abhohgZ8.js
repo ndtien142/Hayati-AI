@@ -1,0 +1,1 @@
+import{u as o,r,j as s,O as t}from"./index-CsGxZx0m.js";function e(){return o(),r.useEffect(()=>{},[]),s.jsx("div",{className:"no-scrollbar overflow-scroll",children:s.jsx(t,{})})}export{e as default};
