@@ -58,24 +58,34 @@ export default function Router() {
       element: <LogoOnlyLayout />,
       children: [
         {
-          path: "",
+          path: "/",
+          element: <Navigate to={PATH_MAIN.discover.root} replace />,
+        },
+        {
+          path: PATH_MAIN.discover.root,
+          element: <DiscoverContainer />,
+        },
+        {
+          path: PATH_MAIN.onboarding.root,
           element: <Onboarding />,
-        },
-        {
-          path: PATH_MAIN.onboarding.swipe,
-          element: <OnboardingSwipe />,
-        },
-        {
-          path: PATH_MAIN.onboarding.match,
-          element: <OnboardingMatch />,
-        },
-        {
-          path: PATH_MAIN.onboarding.chatting,
-          element: <ChattingContainer />,
-        },
-        {
-          path: PATH_MAIN.onboarding.subscribe,
-          element: <SubscribeContainer />,
+          children: [
+            {
+              path: PATH_MAIN.onboarding.swipe,
+              element: <OnboardingSwipe />,
+            },
+            {
+              path: PATH_MAIN.onboarding.match,
+              element: <OnboardingMatch />,
+            },
+            {
+              path: PATH_MAIN.onboarding.chatting,
+              element: <ChattingContainer />,
+            },
+            {
+              path: PATH_MAIN.onboarding.subscribe,
+              element: <SubscribeContainer />,
+            },
+          ],
         },
       ],
     },
@@ -107,3 +117,6 @@ const ChattingContainer = Loadable(
 const SubscribeContainer = Loadable(
   lazy(() => import("../../onboarding/subscribe"))
 );
+
+// Main
+const DiscoverContainer = Loadable(lazy(() => import("../../discover")));

@@ -28,4 +28,7 @@ export const PATH_MAIN = {
     chatting: "/onboarding/chatting",
     subscribe: "/onboarding/subscribe",
   },
+  discover: {
+    root: "/discover",
+  },
 };

@@ -12,8 +12,8 @@ const BottomNavigation = () => {
   const navItems = [
     {
       label: "Discover",
-      icon: <PiGenderFemaleFill size={25} />,
-      color: "#FF62A5",
+      icon: <PiGenderFemaleFill size={25} color="#FF9BE3" />,
+      color: "#FF9BE3",
       route: "/discover",
     },
     {
@@ -31,7 +31,7 @@ const BottomNavigation = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 w-full border-t border-gray-200 bg-[#000000] dark:border-gray-800 px-8 flex justify-between items-center z-50 h-[90px]">
+    <nav className="fixed bottom-0 left-0 w-full border-t border-none bg-[#000000] dark:border-gray-800 px-8 flex justify-between items-center z-50 h-[90px]">
       {navItems.map((item, index) => (
         <Link
           key={index}
