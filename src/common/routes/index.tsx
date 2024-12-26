@@ -115,6 +115,15 @@ export default function Router() {
             },
           ],
         },
+        {
+          path: PATH_MAIN.profile.root,
+          children: [
+            {
+              path: PATH_MAIN.profile.home,
+              element: <ProfileContainer />,
+            },
+          ],
+        },
       ],
     },
     { path: "*", element: <Navigate to="/404" replace /> },
@@ -160,3 +169,6 @@ const ChattingWallpaperContainer = Loadable(
 const ChattingWallpaperPreviewContainer = Loadable(
   lazy(() => import("../../chatting/wallpaper-preview"))
 );
+
+// Profile
+const ProfileContainer = Loadable(lazy(() => import("../../profile/home")));

@@ -38,4 +38,10 @@ export const PATH_MAIN = {
     wallpaper: "/chatting/wallpaper",
     wallpaperPreview: "/chatting/wallpaper-preview",
   },
+  profile: {
+    root: "/profile",
+    home: "/profile/home",
+    settings: "/profile/settings",
+    gallery: "/profile/gallery",
+  },
 };

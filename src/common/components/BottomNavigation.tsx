@@ -5,6 +5,7 @@ import {
   PiUserCircleBold,
 } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import { PATH_MAIN } from "../routes/path";
 
 interface BottomNavigationProps {
   activeTab: string;
@@ -16,19 +17,19 @@ const BottomNavigation: React.FC<BottomNavigationProps> = ({ activeTab }) => {
       label: "Discover",
       icon: <PiGenderFemaleFill size={25} />,
       color: "#FFF",
-      route: "/discover",
+      route: PATH_MAIN.discover.root,
     },
     {
       label: "Chat",
       icon: <PiChatTeardropFill size={25} />,
       color: "#FFF",
-      route: "/chatting",
+      route: PATH_MAIN.chatting.root,
     },
     {
       label: "Profile",
       icon: <PiUserCircleBold size={25} />,
       color: "#FFF",
-      route: "/profile",
+      route: PATH_MAIN.profile.home,
     },
   ];
 
