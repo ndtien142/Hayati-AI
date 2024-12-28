@@ -5,6 +5,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { IoSettingsOutline } from "react-icons/io5";
 import { PiSparkle, PiSparkleFill } from "react-icons/pi";
 import { PiCoins } from "react-icons/pi";
+import GalleryItems from "./components/GalleryItems";
+import { GALLERY_ITEM } from "./profileHome.constant";
 
 const ProfileHomeContainer = () => {
   return (
@@ -191,7 +193,22 @@ const ProfileHomeContainer = () => {
           </div>
         </TabsContent>
         <TabsContent value="trophies">{}</TabsContent>
-        <TabsContent value="gallery">Gallery</TabsContent>
+        <TabsContent value="gallery">
+          <div className="flex flex-col gap-4 px-4 mt-5">
+            {GALLERY_ITEM.map((item, index) => {
+              return (
+                <GalleryItems
+                  completedItem={item.completedItem}
+                  id={item.id}
+                  image={item.image}
+                  label={item.label}
+                  totalItems={item.totalItems}
+                  key={index}
+                />
+              );
+            })}
+          </div>
+        </TabsContent>
       </Tabs>
       <BottomNavigation activeTab="Profile" />
     </main>
