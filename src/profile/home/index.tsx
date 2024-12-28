@@ -202,6 +202,7 @@ const ProfileHomeContainer = () => {
                   id={item.id}
                   image={item.image}
                   label={item.label}
+                  navigate={item.navigate}
                   totalItems={item.totalItems}
                   key={index}
                 />

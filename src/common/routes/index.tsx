@@ -122,6 +122,14 @@ export default function Router() {
               path: PATH_MAIN.profile.home,
               element: <ProfileContainer />,
             },
+            {
+              path: PATH_MAIN.profile.photos,
+              element: <GalleryPhotos />,
+            },
+            {
+              path: PATH_MAIN.profile.girlfriends,
+              element: <GalleryGirlfriends />,
+            },
           ],
         },
       ],
@@ -172,3 +180,7 @@ const ChattingWallpaperPreviewContainer = Loadable(
 
 // Profile
 const ProfileContainer = Loadable(lazy(() => import("../../profile/home")));
+const GalleryPhotos = Loadable(lazy(() => import("../../profile/photos")));
+const GalleryGirlfriends = Loadable(
+  lazy(() => import("../../profile/girlfriends"))
+);

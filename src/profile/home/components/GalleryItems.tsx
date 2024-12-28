@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { IGalleryItemProps } from "../profileHome.interface";
 
 const GalleryItems = ({
@@ -5,10 +6,14 @@ const GalleryItems = ({
   image,
   label,
   totalItems,
+  navigate,
 }: IGalleryItemProps) => {
-  console.log(completedItem / totalItems);
+  const onNavigate = useNavigate();
   return (
-    <div className="w-full flex gap-5 rounded-[8px] bg-[#241E33]">
+    <div
+      className="w-full flex gap-5 rounded-[8px] bg-[#241E33]"
+      onClick={() => onNavigate(navigate)}
+    >
       <div className="w-[88px] h-[89px] rounded-[8px]">
         <img
           src={image}

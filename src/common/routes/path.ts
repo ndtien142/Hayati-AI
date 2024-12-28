@@ -43,5 +43,8 @@ export const PATH_MAIN = {
     home: "/profile/home",
     settings: "/profile/settings",
     gallery: "/profile/gallery",
+    photos: "/profile/gallery/photos",
+    girlfriends: "/profile/gallery/girlfriends",
+    outfits: "/profile/gallery/outfits",
   },
 };

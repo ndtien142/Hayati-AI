@@ -4,4 +4,5 @@ export interface IGalleryItemProps {
   image: string;
   totalItems: number;
   completedItem: number;
+  navigate: string;
 }
