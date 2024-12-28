@@ -44,4 +44,9 @@ export const IMAGE_PATH = {
     layla: "/Hayati-AI/images/onboarding/onboarding-1.png",
     you: "/Hayati-AI/images/onboarding/onboarding-2.png",
   },
+  trophies: {
+    trophies1: "/Hayati-AI/images/trophies/trophies-1.png",
+    trophies2: "/Hayati-AI/images/trophies/trophies-2.png",
+    trophies3: "/Hayati-AI/images/trophies/trophies-3.png",
+  },
 };

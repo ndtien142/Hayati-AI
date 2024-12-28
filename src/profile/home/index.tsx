@@ -6,7 +6,8 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { PiSparkle, PiSparkleFill } from "react-icons/pi";
 import { PiCoins } from "react-icons/pi";
 import GalleryItems from "./components/GalleryItems";
-import { GALLERY_ITEM } from "./profileHome.constant";
+import { GALLERY_ITEM, TROPHIES } from "./profileHome.constant";
+import Trophies from "./components/Trophies";
 
 const ProfileHomeContainer = () => {
   return (
@@ -192,7 +193,27 @@ const ProfileHomeContainer = () => {
             </span>
           </div>
         </TabsContent>
-        <TabsContent value="trophies">{}</TabsContent>
+        <TabsContent
+          value="trophies"
+          className="overflow-x-hidden overflow-y-auto"
+        >
+          <div className="flex flex-col gap-4 px-4 mt-5 mb-36">
+            {TROPHIES.map((item, index) => {
+              return (
+                <Trophies
+                  id={item.id}
+                  isClaimed={item.isClaimed}
+                  completedItem={item.completedItem}
+                  description={item.description}
+                  image={item.image}
+                  label={item.label}
+                  totalItems={item.totalItems}
+                  key={index}
+                />
+              );
+            })}
+          </div>
+        </TabsContent>
         <TabsContent value="gallery">
           <div className="flex flex-col gap-4 px-4 mt-5">
             {GALLERY_ITEM.map((item, index) => {
