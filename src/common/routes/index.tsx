@@ -115,6 +115,27 @@ export default function Router() {
             },
           ],
         },
+        {
+          path: PATH_MAIN.profile.root,
+          children: [
+            {
+              path: PATH_MAIN.profile.home,
+              element: <ProfileContainer />,
+            },
+            {
+              path: PATH_MAIN.profile.settings,
+              element: <ProfileSettings />,
+            },
+            {
+              path: PATH_MAIN.profile.photos,
+              element: <GalleryPhotos />,
+            },
+            {
+              path: PATH_MAIN.profile.girlfriends,
+              element: <GalleryGirlfriends />,
+            },
+          ],
+        },
       ],
     },
     { path: "*", element: <Navigate to="/404" replace /> },
@@ -160,3 +181,11 @@ const ChattingWallpaperContainer = Loadable(
 const ChattingWallpaperPreviewContainer = Loadable(
   lazy(() => import("../../chatting/wallpaper-preview"))
 );
+
+// Profile
+const ProfileContainer = Loadable(lazy(() => import("../../profile/home")));
+const GalleryPhotos = Loadable(lazy(() => import("../../profile/photos")));
+const GalleryGirlfriends = Loadable(
+  lazy(() => import("../../profile/girlfriends"))
+);
+const ProfileSettings = Loadable(lazy(() => import("../../profile/settings")));

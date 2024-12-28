@@ -13,7 +13,7 @@ const SubscribeContainer = () => {
       <div
         className="absolute inset-0 w-[100vw] h-[100vh]"
         style={{
-          backgroundImage: "url(" + IMAGE_PATH.subscribe.image_1 + ")",
+          backgroundImage: "url(" + IMAGE_PATH.subscribe1.image_1 + ")",
           backgroundSize: "cover",
           backgroundPosition: "center",
           boxShadow:

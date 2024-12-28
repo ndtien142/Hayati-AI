@@ -20,8 +20,19 @@ export const IMAGE_PATH = {
     image_4: "/Hayati-AI/images/onboarding/onboarding-chatting.png",
     image_5: "/Hayati-AI/images/onboarding/onboarding-4.png",
   },
-  subscribe: {
+  subscribe1: {
     image_1: "/Hayati-AI/images/subscribe/subscribe-1.png",
+    image_2: "/Hayati-AI/images/swipe/swipe-2.png",
+    image_3: "/Hayati-AI/images/swipe/swipe-3.png",
+    image_4: "/Hayati-AI/images/swipe/swipe-4.png",
+    image_5: "/Hayati-AI/images/swipe/swipe-5.png",
+  },
+  subscribe2: {
+    image_1: "/Hayati-AI/images/onboarding/onboarding-1.png",
+    image_2: "/Hayati-AI/images/onboarding/onboarding-2.png",
+    image_3: "/Hayati-AI/images/onboarding/onboarding-3.png",
+    image_4: "/Hayati-AI/images/onboarding/onboarding-chatting.png",
+    image_5: "/Hayati-AI/images/onboarding/onboarding-4.png",
   },
   wallpaper: {
     image1: "/Hayati-AI/images/swipe/swipe-1.png",
@@ -32,5 +43,10 @@ export const IMAGE_PATH = {
   avatars: {
     layla: "/Hayati-AI/images/onboarding/onboarding-1.png",
     you: "/Hayati-AI/images/onboarding/onboarding-2.png",
+  },
+  trophies: {
+    trophies1: "/Hayati-AI/images/trophies/trophies-1.png",
+    trophies2: "/Hayati-AI/images/trophies/trophies-2.png",
+    trophies3: "/Hayati-AI/images/trophies/trophies-3.png",
   },
 };
