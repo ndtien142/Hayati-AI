@@ -123,6 +123,10 @@ export default function Router() {
               element: <ProfileContainer />,
             },
             {
+              path: PATH_MAIN.profile.settings,
+              element: <ProfileSettings />,
+            },
+            {
               path: PATH_MAIN.profile.photos,
               element: <GalleryPhotos />,
             },
@@ -184,3 +188,4 @@ const GalleryPhotos = Loadable(lazy(() => import("../../profile/photos")));
 const GalleryGirlfriends = Loadable(
   lazy(() => import("../../profile/girlfriends"))
 );
+const ProfileSettings = Loadable(lazy(() => import("../../profile/settings")));

@@ -8,8 +8,11 @@ import { PiCoins } from "react-icons/pi";
 import GalleryItems from "./components/GalleryItems";
 import { GALLERY_ITEM, TROPHIES } from "./profileHome.constant";
 import Trophies from "./components/Trophies";
+import { useNavigate } from "react-router-dom";
+import { PATH_MAIN } from "@/common/routes/path";
 
 const ProfileHomeContainer = () => {
+  const navigate = useNavigate();
   return (
     <main className="w-[100vw] h-[100vh]">
       <div className="flex items-center justify-between mt-5 mb-6 px-5">
@@ -20,7 +23,10 @@ const ProfileHomeContainer = () => {
         >
           Profile
         </h3>
-        <IoSettingsOutline size={30} />
+        <IoSettingsOutline
+          size={30}
+          onClick={() => navigate(PATH_MAIN.profile.settings)}
+        />
       </div>
       <div
         className="px-4 flex items-center justify-between mb-5"
